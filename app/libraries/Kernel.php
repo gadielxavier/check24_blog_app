@@ -36,7 +36,7 @@ class Kernel {
         require_once '../app/controllers/' . $this->current_controller . '.php';
 
         // Instantiate the current controller class 
-        $this->current_controller = new $this->current_controller;
+        $this->current_controller = new $this->current_controller ();
 
         // Check for second part of url
         if(isset($url[1])){
