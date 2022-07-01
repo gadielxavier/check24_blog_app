@@ -9,6 +9,7 @@ class Kernel {
     protected $current_controller = 'Blog';
     protected $current_method = 'index';
     protected $url_params = [];
+    protected $url = '';
 
     public function __construct()
     {
@@ -16,10 +17,10 @@ class Kernel {
         if(isset($_GET['url'])){
 
             // Strip whitespace (or other characters) from the end of a string
-            $url = rtrim($_GET['url'], '/');
+            $this->url = rtrim($_GET['url'], '/');
 
             // Split a string by a '/'
-            $url = explode('/', $url);
+            $this->url = explode('/', $url);
 
         }
 
@@ -49,7 +50,7 @@ class Kernel {
         }
 
         // Get the ulr params
-        $this->url_params = $url ? array_values($url) : [];
+        $this->url_params = $this->url ? array_values($url) : [];
 
         // Call a callback with an array of parameters
         call_user_func_array([$this->current_controller, $this->current_method], $this->url_params);
