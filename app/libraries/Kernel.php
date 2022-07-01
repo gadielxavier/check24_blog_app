@@ -25,11 +25,11 @@ class Kernel {
         }
 
         // Set Current Controller
-        if(isset($url[0])){
-            if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php' )){
-                $this->current_controller = ucwords($url[0]);
+        if(isset($this->url[0])){
+            if(file_exists('../app/controllers/' . ucwords($this->url[0]) . '.php' )){
+                $this->current_controller = ucwords($this->url[0]);
                 // Unset 0 Index
-                unset($url[0]);
+                unset($this->url[0]);
             }
         }
 
@@ -37,15 +37,15 @@ class Kernel {
         require_once '../app/controllers/' . $this->current_controller . '.php';
 
         // Instantiate the current controller class 
-        $this->current_controller = new $this->current_controller ();
+        $this->current_controller = new $this->current_controller;
 
         // Check for second part of url
-        if(isset($url[1])){
+        if(isset($this->url[1])){
             // Check to see if method exists in controller
-            if(method_exists($this->current_controller, $url[1])){
-                $this->current_method = $url[1];
+            if(method_exists($this->current_controller, $this->url[1])){
+                $this->current_method = $this->url[1];
                 // Unset 1 Index
-                unset($url[1]);
+                unset($this->url[1]);
             }
         }
 
