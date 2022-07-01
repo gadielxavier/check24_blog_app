@@ -20,7 +20,7 @@ class Kernel {
             $this->url = rtrim($_GET['url'], '/');
 
             // Split a string by a '/'
-            $this->url = explode('/', $url);
+            $this->url = explode('/', $this->url);
 
         }
 
@@ -50,7 +50,7 @@ class Kernel {
         }
 
         // Get the ulr params
-        $this->url_params = $this->url ? array_values($url) : [];
+        $this->url_params = $this->url ? array_values($this->url) : [];
 
         // Call a callback with an array of parameters
         call_user_func_array([$this->current_controller, $this->current_method], $this->url_params);
