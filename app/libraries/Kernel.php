@@ -1,0 +1,58 @@
+<?php
+
+/*
+* Class that loads current controller and redirect
+* to the proper view. 
+*/
+class Kernel {
+
+    protected $current_controller = 'Blog';
+    protected $current_method = 'index';
+    protected $url_params = [];
+
+    public function __construct()
+    {
+        // Get current url
+        if(isset($_GET['url'])){
+
+            // Strip whitespace (or other characters) from the end of a string
+            $url = rtrim($_GET['url'], '/');
+
+            // Split a string by a '/'
+            $url = explode('/', $url);
+
+        }
+
+        // Set Current Controller
+        if(isset($url[0])){
+            if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php' )){
+                $this->current_controller = ucwords($url[0]);
+                // Unset 0 Index
+                unset($url[0]);
+            }
+        }
+
+        // Loads the current controller
+        require_once '../app/controllers/' . $this->current_controller . '.php';
+
+        // Instantiate the current controller class 
+        $this->current_controller = new $this->current_controller;
+
+        // Check for second part of url
+        if(isset($url[1])){
+            // Check to see if method exists in controller
+            if(method_exists($this->current_controller, $url[1])){
+                $this->current_method = $url[1];
+                // Unset 1 Index
+                unset($url[1]);
+            }
+        }
+
+        // Get the ulr params
+        $this->url_params = $url ? array_values($url) : [];
+
+        // Call a callback with an array of parameters
+        call_user_func_array([$this->current_controller, $this->current_method], $this->url_params);
+    }
+
+}
