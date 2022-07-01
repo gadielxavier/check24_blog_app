@@ -11,6 +11,6 @@ define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
 define('URLROOT', 'http://localhost:8000/public');
 // Site Name
-define('SITENAME', 'Check24 Blog App');
+define('SITENAME',  'Blog App');
 // App Version
 define('APPVERSION', '1.0.0');

@@ -22,8 +22,7 @@ class Controller {
         } else {
             die('Model does not exist');
         }
-        
-        
+
     }
 
     // Load view
