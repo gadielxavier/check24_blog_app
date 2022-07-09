@@ -18,8 +18,9 @@ class Controller {
             // Require model file
             require_once '../app/models/' . $model . '.php';
 
+            $modelName = 'App\Models\\' . $model;
             // Instantiate model
-            return new $model();
+            return new  $modelName();
 
         } else {
             die('Model does not exist');

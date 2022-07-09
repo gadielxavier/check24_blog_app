@@ -1,4 +1,9 @@
 <?php
+
+namespace App\Libraries;
+
+use PDO;
+
 /*
 * PDO Database Class
 * Connect to database

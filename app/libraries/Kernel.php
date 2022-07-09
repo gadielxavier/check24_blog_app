@@ -7,6 +7,7 @@
 class Kernel {
 
     protected $current_controller = 'Blog';
+    protected $controllerNameSpace = 'App\Controllers\\';
     protected $current_method = 'index';
     protected $url_params = [];
     protected $url = '';
@@ -36,8 +37,9 @@ class Kernel {
         // Loads the current controller
         require_once '../app/controllers/' . $this->current_controller . '.php';
 
-        // Instantiate the current controller class 
-        $this->current_controller = new $this->current_controller;
+        // Instantiate the current controller class
+        $controllerName =  $this->controllerNameSpace . $this->current_controller;
+        $this->current_controller = new $controllerName();
 
         // Check for second part of url
         if(isset($this->url[1])){
