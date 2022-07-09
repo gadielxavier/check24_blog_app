@@ -1,6 +1,11 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Libraries\Controller;
+
 class Users extends Controller {
+    
     public function __construct()
     {
         $this->userModel = $this->model('User');
