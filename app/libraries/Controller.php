@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Libraries;
+
 /*
 * Base Controller Class
 * Loads the model and views
