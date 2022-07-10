@@ -8,14 +8,17 @@ To execute this project first run the following command in the root directory:
 
 Then, changes the database variables in app/config/config.php:
 
+<b>
 <p>// DB Params</p>
 <p>define('DB_HOST', 'localhost');</p>
 <p>define('DB_USER', 'root');</p>
 <p>define('DB_PASS', 'root');</p>
 <p>define('DB_NAME', 'blog');</p>
+</b>
 
 Also change the database variables in phinx.php:
 
+<b>
 <p>'development' => [ </p>
     <p> 'adapter' => 'mysql',</p>
     <p> 'host' => 'localhost',</p>
@@ -25,6 +28,7 @@ Also change the database variables in phinx.php:
     <p> 'port' => '3306',</p>
     <p> 'charset' => 'utf8',</p>
 <p>],
+</b>
 
 Then, run the database migrations:
 
