@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Libraries;
+
 /*
 * Class that loads current controller and redirect
 * to the proper view. 

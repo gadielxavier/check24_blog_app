@@ -14,4 +14,4 @@ require_once '../app/bootstrap.php';
 /*
 * Load Kernel that handle the incoming request
 */
-$init = new Kernel();
+$init = new App\Libraries\Kernel();
