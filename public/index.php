@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Check24 Blog App - A Blog Application implemented for the Check24 challenge
+ * PHP Blog App - A Blog Application implemented in native php
  * @author   Gadiel Xavier <gadiel.xavier@gmail.com>
  */
 
