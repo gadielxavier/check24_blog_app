@@ -17,10 +17,6 @@ class Blog extends Controller {
             redirect('posts');
         }
         
-        $data = [
-            'title' => 'SharePosts',
-            'description' => 'Simple Social Network buit in TranversyMVC framework.'
-        ];
-        $this->view('blog/index', $data);
+        $this->view('blog/index');
     }
 }
