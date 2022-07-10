@@ -3,6 +3,7 @@
 namespace App\Libraries;
 
 use PDO;
+use PDOException;
 
 /*
 * PDO Database Class
