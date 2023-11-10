@@ -4,9 +4,9 @@ This is a simple blog application implemented in native php
 
 To execute this project first run the following command in the root directory:
 
-<b> $ composer isntall </b>
+<b> $ composer install </b>
 
-Then, changes the database variables in app/config/config.php:
+Then, change the database variables in app/config/config.php:
 
 <b>
 <p>// DB Params</p>
@@ -16,7 +16,7 @@ Then, changes the database variables in app/config/config.php:
 <p>define('DB_NAME', 'blog');</p>
 </b>
 
-Also change the database variables in phinx.php:
+Also, change the database variables in phinx.php:
 
 <b>
 <p>'development' => [ </p>
